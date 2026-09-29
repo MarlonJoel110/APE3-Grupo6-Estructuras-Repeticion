@@ -1,1 +1,101 @@
+1. Análisis del enunciado
+
+El programa debe solicitar al usuario un número entero entre 1 y 12.
+
+Si el número está fuera de ese rango, se debe volver a solicitar.
+La validación se realizará utilizando un ciclo while.
+Cuando el número sea válido, se generará su tabla de multiplicar desde 1 hasta 12 utilizando un ciclo for.
+2. Datos de entrada
+numero: número entero ingresado por el usuario.
+
+Rango permitido: 1 a 12.
+
+3. Proceso
+Solicitar al usuario un número.
+Verificar si el número está entre 1 y 12.
+Si el número es incorrecto, volver a solicitarlo mediante while.
+Cuando el número sea válido, utilizar un for desde 1 hasta 12.
+Multiplicar el número ingresado por el contador.
+Mostrar cada resultado de la tabla.
+4. Datos de salida
+
+Se mostrará la tabla de multiplicar del número ingresado:
+
+5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+...
+5 x 12 = 60
+5. Variables
+Variable	Tipo	Descripción
+numero	int	Número ingresado por el usuario
+i	int	Contador para generar la tabla
+6. Pseudocódigo
+Algoritmo TablaMultiplicarValidada
+	
+	Definir numero, i, resultado Como Entero
+	
+	Escribir "Ingrese un numero entre 1 y 12:"
+	Leer numero
+	
+	Mientras numero < 1 O numero > 12 Hacer
+		Escribir "Numero incorrecto."
+		Escribir "Ingrese un numero entre 1 y 12:"
+		Leer numero
+	FinMientras
+	
+	Escribir "Tabla de multiplicar del ", numero
+	
+	Para i <- 1 Hasta 12 Con Paso 1 Hacer
+		resultado <- numero * i
+		Escribir numero, " x ", i, " = ", resultado
+	FinPara
+	
+FinAlgoritmo
+7. Código en Java
+import java.util.Scanner;
+
+public class TablaMultiplicar {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int numero;
+        int resultado;
+
+        System.out.print("Ingrese un número entre 1 y 12: ");
+        numero = sc.nextInt();
+
+        while (numero < 1 || numero > 12) {
+            System.out.print("Número incorrecto. Ingrese un número entre 1 y 12: ");
+            numero = sc.nextInt();
+        }
+
+        System.out.println("\nTabla de multiplicar del " + numero);
+
+        for (int i = 1; i <= 12; i++) {
+            resultado = numero * i;
+            System.out.println(numero + " x " + i + " = " + resultado);
+        }
+
+        sc.close();
+    }
+}
+8. Prueba de excritorio 
+Ingrese un número entre 1 y 12: 15
+Número incorrecto. Ingrese un número entre 1 y 12: 8
+
+Tabla de multiplicar del 8
+8 x 1 = 8
+8 x 2 = 16
+8 x 3 = 24
+8 x 4 = 32
+8 x 5 = 40
+8 x 6 = 48
+8 x 7 = 56
+8 x 8 = 64
+8 x 9 = 72
+8 x 10 = 80
+8 x 11 = 88
+8 x 12 = 96
 
